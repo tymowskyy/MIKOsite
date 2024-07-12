@@ -9,28 +9,105 @@
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="navbar-left">
-<!--                <img src="{% static 'LOGO_HEADER.png' %}" alt="Logo" style="height: 80px;">-->
-                <h2>MIKO</h2>
+   {% include "header.html" %}
+
+
+    <section id="description">
+        <h2>Kim jesteśmy?</h2>
+        <h3>Jesteśmy grupą młodych pasjonatów matematyki i informatyki, którzy chcą podzielić się swoją wiedzą z kolegami niemającymi dostępu do odpowiednich materiałów. Zależy nam na stworzeniu otwartej, długotrwałej społeczności złożonej zarówno z doświadczonych olimpijczyków, jak i uczniów stawiających swoje pierwsze kroki w Olimpiadzie Matematycznej.
+            Naszym celem jest między innymi umożliwienie uczniom ze szkół bez tradycji olimpijskiej równych szans w starcie w Olimpiadach.
+            Organizujemy regularne kółka, konkursy zadaniowe, udostępniamy materiały i nie tylko.
+            Przede wszystkim działamy w ramach modelu "od uczniów, dla uczniów"; każdy wystarczająco doświadczony członek społeczności jest mile widziany w roli prowadzącego kółka lub przy pomocy w organizacji wykładów i bezpośrednio w udzielaniu odpowiedzi na czatach naszego serwera <a href="https://discord.gg/nA8CjrPqGM" style="text-decoration: underline dashed;">Discorda</a>. Zamierzamy również prowadzić działalność popularyzatorską na rzecz matematyki olimpijskiej.
+        </h3>
+    </section>
+
+    <section id="team">
+        <h2>Nasz zespół</h2>
+        <div class="team-tiles">
+
+            <div class="team-member">
+                <div class="photo-placeholder"> </div>
+                <h2>Oleksii Iermolenko</h2>
+                <h3 class="role">Administrator strony; Prowadzący zajęć matematycznych;</h3>
+                <h3 class="description">Jestem absolwentem XI Liceum w Krakowie, interesuję się matematyką, informatyką i gram w szachy.
+                W sprawie strony internetowej MIKO zapraszam do kontaktu.</h3>
+<!--                <h4 class="kontakt-tile">alermgm@gmail.com</h4>-->
+            </div><div class="team-member">
+                <div class="photo-placeholder"> </div>
+                <h2>Filip Manijak</h2>
+                <h3 class="role">Administrator strony; Prowadzący zajęć matematycznych; Prowadzący zajęć koła olimpiady AI; Przewodniczący koła</h3>
+                <h3 class="description">Maria creates engaging mathematical content for our online platforms. She has a knack for explaining difficult concepts through creative analogies and visual aids.</h3>
+                </div><div class="team-member">
+                    <div class="photo-placeholder"> </div>
+                    <h2>Konstanty Smolira</h2>
+                    <h3 class="role">Administrator strony; Prowadzący zajęć matematycznych; Prowadzący zajęć koła olimpiady AI; Przewodniczący koła</h3>
+                    <h3 class="description">Maria creates engaging mathematical content for our online platforms. She has a knack for explaining difficult concepts through creative analogies and visual aids.</h3>
+                </div><div class="team-member">
+                    <div class="photo-placeholder"> </div>
+                    <h2>Antoni Łuczak</h2>
+                    <h3 class="role">Administrator strony; Prowadzący zajęć matematycznych; Prowadzący zajęć koła olimpiady AI; Przewodniczący koła</h3>
+                    <h3 class="description">Maria creates engaging mathematical content for our online platforms. She has a knack for explaining difficult concepts through creative analogies and visual aids.</h3>
+                </div><div class="team-member">
+                    <div class="photo-placeholder"> </div>
+                    <h2>Łukasz Próchniak</h2>
+                    <h3 class="role">Administrator strony; Prowadzący zajęć matematycznych; Prowadzący zajęć koła olimpiady AI; Przewodniczący koła</h3>
+                    <h3 class="description">Maria creates engaging mathematical content for our online platforms. She has a knack for explaining difficult concepts through creative analogies and visual aids.</h3>
+                </div>
+            <div class="team-member">
+                <div class="photo-placeholder"> </div>
+                <h2>Miłosz Płatek</h2>
+                <h3 class="role">Administrator strony;</h3>
+                <h3 class="description">Maria creates engaging mathematical content for our online platforms. She has a knack for explaining difficult concepts through creative analogies and visual aids.</h3>
             </div>
-            <ul class="navbar-center">
-                <li><a id="current" href="/">HOME</a></li>
-                <li><a href="/kolomatematyczne">KOŁO MATEMATYCZNE</a></li>
-                <li><a href="/about">O NAS</a></li>
-                <li><a href="/bazahintow">BAZA ZADAŃ</a></li>
-            </ul>
-            <div class="navbar-right">
-                <a href="/profile">PROFIL</a>
+            <div class="team-member">
+                <div class="photo-placeholder"> </div>
+                <h2>Kordian Pisarek</h2>
+                <h3 class="role">Administrator strony;</h3>
+                <h3 class="description">Maria creates engaging mathematical content for our online platforms. She has a knack for explaining difficult concepts through creative analogies and visual aids.</h3>
             </div>
-        </nav>
-    </header>
-<section id="about">
-    <h2>About Us</h2>
-    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-</section>
+            <div class="team-member">
+                <div class="photo-placeholder"> </div>
+                <h2>Tymoteusz Stępkowski</h2>
+                <h3 class="role">Administrator strony;</h3>
+                <h3 class="description">Maria creates engaging mathematical content for our online platforms. She has a knack for explaining difficult concepts through creative analogies and visual aids.</h3>
+            </div>
+            <div class="team-member">
+                <div class="photo-placeholder"> </div>
+                <h2>Jakub Podhajski</h2>
+                <h3 class="role">Administrator strony;</h3>
+                <h3 class="description">Maria creates engaging mathematical content for our online platforms. She has a knack for explaining difficult concepts through creative analogies and visual aids.</h3>
+            </div>
+            <div class="team-member">
+                <div class="photo-placeholder"></div>
+                <h2>Igor Stec</h2>
+                <h3 class="role">Administrator strony;</h3>
+                <h3 class="description">Maria creates engaging mathematical content for our online platforms. She has a knack for explaining difficult concepts through creative analogies and visual aids.</h3>
+            </div>
+            <div class="team-member">
+                <div class="photo-placeholder"> </div>
+                <h2>Prowadzacy kółek :))</h2>
+                <h3 class="role">Administrator strony;</h3>
+                <h3 class="description">Serdecznie dziękujemy każdej osobie, która poświęciła chociaż trochę swojego czasu na
+                przygotowanie wykładu, organizację event'u lub pomogła nam w inny sposób. Bez was ta społeczności nie mogłaby istnieć!</h3>
+            </div>
+
+
+        </div>
+    </section>
+
+
 {% include "footer.html" %}
 
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const navbarToggle = document.querySelector('.navbar-toggle');
+  const navbarCenter = document.querySelector('.navbar-center');
+
+  navbarToggle.addEventListener('click', function() {
+    navbarCenter.classList.toggle('active');
+  });
+});
+</script>
 </html>
