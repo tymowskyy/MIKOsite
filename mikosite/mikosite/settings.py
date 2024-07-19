@@ -17,6 +17,13 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://mikomath.org',
+    'http://mikomath.org',
+    "https://195.117.15.149",
+    "http://195.117.15.149",
+]
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -122,15 +129,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-        }
-    }
-}
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": "redis://127.0.0.1:6379/1",
+#         "OPTIONS": {
+#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+#         }
+#     }
+# }
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
