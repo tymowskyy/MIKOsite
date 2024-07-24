@@ -13,35 +13,16 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': '/home/website/MIKOProd/mikosite/django_debug.log',
-        },
-    },
-    'root': {
-        'handlers': ['console', 'file'],
-        'level': 'DEBUG',
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console', 'file'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
-            'propagate': False,
-        },
-    },
-}
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+try:
+        from .secrets import SECRET_KEY, DB_PASSWORD
+except ImportError:
+        raise ImportError("Create a secrets.py file with SECRET_KEY and DB_PASSWORD")
 
 
 CSRF_TRUSTED_ORIGINS = [
@@ -55,8 +36,7 @@ CSRF_TRUSTED_ORIGINS = [
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = False
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SESSION_COOKIE_SECURE = True
@@ -75,7 +55,6 @@ ALLOWED_HOSTS = [
 ]
 
 APPEND_SLASH = True
-
 
 
 # Application definition
@@ -138,16 +117,28 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mikosite.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+sqlite_db_path = BASE_DIR / 'db.sqlite3'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+
+if sqlite_db_path.exists():
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': sqlite_db_path,                
+        }   
     }
-}
-
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'mikodb',
+            'USER': 'postgres',
+            'PASSWORD': DB_PASSWORD,
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    } 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -163,7 +154,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 
 # CACHES = {

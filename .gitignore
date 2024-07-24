@@ -1,9 +1,11 @@
-#dalem z gpt gitignore bo jak robilem swoj projekt to jakos lepiej to dziala
+# Media files
+mikosite/media/
 
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+# Byte-compiled files
+*.log
+*.pot
+*.pyc
+__pycache__
 
 # C extensions
 *.so
@@ -129,3 +131,5 @@ Thumbs.db
 # Folders created by macOS
 .Spotlight-V100
 .Trashes
+
+./mikosite/mikosite/secrets.py
